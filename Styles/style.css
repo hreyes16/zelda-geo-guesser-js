@@ -1,57 +1,141 @@
 body {
-  background-color: rgb(29, 29, 29);
   margin: 0;
   padding: 0;
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-}
-
-#main_game_section {
+  background-color: black;
 }
 
 nav {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 300px;
-  background-color: rgb(29, 29, 29);
-  border-right: 1px solid rgb(108, 108, 108);
-  box-shadow: 0 0 50px 0 rgb(12, 12, 12);
-}
-
-.content-container {
-  height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-container {
-  margin: 10px;
-  padding: 40px;
-}
-
-.answer-container {
-  display: flex;
-
   height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
 }
 
-h2 {
+@font-face {
+  font-family: GraublauWeb;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+}
+
+#title {
   color: white;
+  font-size: 80px;
+  text-align: center;
+  font-family: GraublauWeb;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+}
+
+#sub-title {
   font-size: 50px;
-  text-align: left;
+  color: white;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
 }
 
 p {
   color: white;
+  font-family: GraublauWeb;
   font-size: 20px;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  box-shadow: 0 0 35px 0 rgb(105, 105, 105);
+}
+li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: GraublauWeb;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+}
+
+li {
+  color: rgb(255, 255, 255);
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 2px;
+  list-style-type: none;
+}
+
+li:hover {
+  border: 1px solid #416fbd;
+  transition: 2s;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: white;
+  font-family: GraublauWeb;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+}
+
+.main-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+}
+
+#image {
+  width: 500px;
+  height: 100%;
+}
+
+#imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#score-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.score {
+  width: 100%;
+}
+
+span {
+  color: white;
+  font-family: GraublauWeb;
+  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+}
+
+.btn {
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.answer-cont {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  flex-direction: row;
 }

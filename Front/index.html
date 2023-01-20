@@ -4,40 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/JavaScript/app.js"></script>
     <link rel="stylesheet" href="/Styles/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <header>
-        <nav><ul>
-            <li>Ab</li>
-            <li>Ac</li>
-            <li>A</li>
-            <li>Aas</li>
-            <li>A</li>
-            <li>Ad</li>
-        </ul></nav>
-    </header>
-
+<header>
+    <nav>
+        <ul>
+            <li>About</li>
+            <li>How to Play</li>
+            <li>Send a message</li>
+        
+        </ul>
+    </nav>
+</header>
 <main>
-    <section>
-       <h2>How to play.</h2>
-       <p>Welcome to an image guessing game based on the legend of zelda</p> 
-       <button class="startGame"> Start Game</button>
+    <div class="main-container">
+    <section class="gameContainer">
+        <div id="imageContainer">
+            <h2>Where is this location?</h2>
+            
+                <div id="score-container">
+                    <span class="questionIndex">0 / 5</span>         
+                </div>
+                <div class="answer-cont">
+                    <button class="btn">Location 1</button>
+                    <button class="btn">Location 2</button>
+                    <button class="btn">Location 3</button>
+                    <button class="btn">${answer}</button>
+                </div>
+                <button class="btn next" value="next">Next Question -></button>
+            </div>`
     </section>
-
-<section class="main_game_section">
-    <img src="/image_locations/img[0].jpg" id="image" alt="">
-
-<div class="content-container">
-   
-    
-    </div>
-    <h2 class="card_title"></h2>
-    <p class="card_desc"></p>
-</div>
-    
-</body>
 </main>
+   
+<script src="/JavaScript/app.js"></script>
+</body>
 </html>

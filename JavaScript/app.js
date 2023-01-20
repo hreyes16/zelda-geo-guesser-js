@@ -1,15 +1,15 @@
-let startGameBtn = document.querySelector('.startGame')
-const questionTitle = document.getElementById('card_title')
-const questionAnswer = document.getElementById('card_desc')
-const answerContainer = document.querySelector('.answer-container')
-const answerBtn = document.querySelector('answer')
-const mainImage = document.getElementById('content-img')
-const imageContainer = document.getElementsByClassName('image-container')
-const gameSection = document.querySelector('.main_game_section')
-const contentContainer = document.querySelector('.content-container')
+const nextQuestion = document.querySelector('.next')
+const btn = document.querySelector('.btn')
+const gameImage = document.getElementById('image')
+const startCount = 0
+const mainGameContainer = document.querySelector('.gameContainer')
+const imageContainer = document.querySelector('#imageContainer')
 
+let questionIndex = document.querySelector('.questionIndex')
 let globalGameState = false
-//Create List of Question using an array
+let maxQuestionIndex = 5
+let currentCount = 0
+
 const imageList = [
   {
     img: '/image_locations/img[0].jpg',
@@ -27,33 +27,47 @@ const imageList = [
 ]
 
 //Select questions and answers and display on browser
+
 function gameActive() {
-  globalGameState = true
-  let currentScore = 0
-  let AnswerLength = 5
-  for (let i = 0; i < imageList.length; i++) {
-    createCard([imageList])
+  currentQuestionIndex = 0
+  maxQuestionIndex = 5
+  currentImageIndex = 0
+  currentCount = 0
+
+  nextQuestion.addEventListener('click', () => {
+    if (currentCount <= 5) {
+      updateCount()
+    }
+    if (!imageList) {
+      alert('no image loaded')
+    }
+  })
+
+  function updateCount() {
+    questionIndex.innerHTML = `${currentCount + 1} / ${maxQuestionIndex}`
+    currentCount++
+    currentImageIndex++
   }
 }
-//iterate thru question once question until 5 total are answered
-function createCard([questions]) {
-  const currentIndex = questions[0]
 
-  console.log(questions.answer)
-  let qCard = `
-    <div class="question">
-    <img src="/image_locations/img[${currentIndex + 1}].jpg" alt="">
-    </div>
-  <div class="answer-container">
-      <form action="">
-          <input type="button" value="ANSWERA">
-          <input type="button" value="ANSWERb">
-          <input type="button" value="ANSWERc">
-          <input type="button" value="">
-        </form>
-       </div>
-      </div>`
-  contentContainer.innerHTML += qCard
+const createCard = ([{ image, answer }]) => {
+  let questionCard = `<img id="image" src="/image_locations/img[${0}].jpg" alt="">
+  `
+  imageContainer.innerHTML += questionCard
 }
+
+function nextImage() {
+  const imagesLength = imageList.length
+  if (currentImageIndex < imagesLength - 1) {
+    currentIndex++
+    updateImage()
+  }
+}
+
+function updateImage() {
+  slide.style.backgroundImage = images[currentIndex]
+}
+createCard([{ imageList }])
+//iterate thru question once question until 5 total are answered
 
 gameActive()
