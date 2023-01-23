@@ -28,32 +28,58 @@ const imageList = [
 
 //Select questions and answers and display on browser
 
-function gameActive() {
-  currentQuestionIndex = 0
-  maxQuestionIndex = 5
-  currentImageIndex = 0
-  currentCount = 0
+currentQuestionIndex = 0
+maxQuestionIndex = 5
+currentImageIndex = 0
+currentCount = 1
+const game = document.getElementById('game') //game div
+const landing = document.getElementById('landing') //landing div
+const gameStart = document.getElementById('startgame') //landing -- start game btn
+let gameActive = false
 
-  nextQuestion.addEventListener('click', () => {
-    if (currentCount <= 5) {
+game.style.display = 'none'
+landing.style.display = 'block'
+
+gameStart.addEventListener('click', () => {
+  console.log('game start clicked')
+  gameActive = !gameActive
+
+  if (gameActive) {
+    game.style.display = 'block'
+    landing.style.display = 'flex'
+  } else if (!gameActive) {
+    game.style.display = 'none'
+    landing.style.display = 'block'
+  }
+})
+
+function handle(e) {
+  if (e.keyCode === 13) {
+    e.preventDefault() // Ensure it is only this code that runs
+    if (currentCount < 5) {
+      updateImage(currentCount)
       updateCount()
     }
-    if (!imageList) {
-      alert('no image loaded')
-    }
-  })
-
-  function updateCount() {
-    questionIndex.innerHTML = `${currentCount + 1} / ${maxQuestionIndex}`
-    currentCount++
-    currentImageIndex++
+    console.log('Answer was submitted')
   }
+  // if (e.keCode === 13) {
+  //   if (currentCount < 5) {
+  //     updateImage(currentCount)
+  //     updateCount()
+  //     console.log('enter')
+  //   } else if (currentCount > 5) {
+  //   }
+  // }
 }
 
-const createCard = ([{ image, answer }]) => {
-  let questionCard = `<img id="image" src="/image_locations/img[${0}].jpg" alt="">
-  `
-  imageContainer.innerHTML += questionCard
+function updateCount() {
+  console.log(`old val: ${currentCount}`)
+
+  questionIndex.innerHTML = `${currentCount + 1} / ${maxQuestionIndex}`
+  currentCount++
+  currentImageIndex++
+  console.log('updating')
+  console.log(`new val: ${currentCount}`)
 }
 
 function nextImage() {
@@ -64,10 +90,13 @@ function nextImage() {
   }
 }
 
-function updateImage() {
-  slide.style.backgroundImage = images[currentIndex]
-}
-createCard([{ imageList }])
-//iterate thru question once question until 5 total are answered
+function updateImage(currentCount) {
+  // slide.style.backgroundImage = images[currentIndex]
+  const imageElement = document.getElementById('image')
+  let newSrc = `../image_locations/img[${currentCount}].jpg`
 
-gameActive()
+  console.log(imageElement)
+  console.log(newSrc)
+  imageElement.src = `../image_locations/img[${currentCount}].jpg`
+}
+//

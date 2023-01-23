@@ -4,7 +4,7 @@ body {
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  background-color: black;
+  background: linear-gradient(#6090f6, black);
 }
 
 nav {
@@ -12,30 +12,27 @@ nav {
   height: 100%;
 }
 
-@font-face {
-  font-family: GraublauWeb;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+#landing {
+  width: 100%;
+  height: 100%;
 }
 
 #title {
   color: white;
   font-size: 80px;
   text-align: center;
-  font-family: GraublauWeb;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  color: #fff;
 }
 
 #sub-title {
   font-size: 50px;
   color: white;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
 }
 
 p {
   color: white;
-  font-family: GraublauWeb;
   font-size: 20px;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
 }
 
 ul {
@@ -49,14 +46,21 @@ ul {
   height: 100%;
   position: fixed;
   overflow: auto;
-  box-shadow: 0 0 35px 0 rgb(105, 105, 105);
+  box-shadow: 0 0 35px 0 rgb(31, 31, 31);
+  background: linear-gradient(
+    120deg,
+    #2f487c 10%,
+    #3f67cd 30%,
+    #3f67cd 40%,
+    #2f487c 60%,
+    #3f67cd 80%,
+    #2f487c
+  );
 }
 li a {
   display: block;
   padding: 10px 20px;
   text-decoration: none;
-  font-family: GraublauWeb;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
 }
 
 li {
@@ -78,40 +82,41 @@ h2,
 h3,
 h4 {
   color: white;
-  font-family: GraublauWeb;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
 }
 
 .main-container {
-  height: 100vh;
-  width: 100%;
-}
-
-.gameContainer {
+  padding-top: 50px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100vw;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  background: linear-gradient(
+    120deg,
+    #2f487c 10%,
+    #3f67cd 30%,
+    #3f67cd 40%,
+    #2f487c 60%,
+    #3f67cd 80%,
+    #2f487c
+  );
+
+  border-color: #5f87dd #1c2a49 #1c2a49 #5f87dd;
+  border-style: solid;
+  border-width: 5px;
 }
 
 #image {
-  width: 500px;
-  height: 100%;
+  height: 800px;
+  width: auto;
 }
 
 #imageContainer {
+  padding: 10px;
+  text-align: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-}
-
-#score-container {
-  display: flex;
-  flex-direction: row;
 }
 
 .score {
@@ -120,17 +125,8 @@ h4 {
 
 span {
   color: white;
-  font-family: GraublauWeb;
-  src: url('/Styles/Fonts/The\ Wild\ Breath\ of\ Zelda.otf') format('opentype');
-}
-
-.btn {
-  padding: 10px;
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 3px;
-  margin: 10px;
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  color: #fff;
 }
 
 .answer-cont {
@@ -138,4 +134,22 @@ span {
   justify-content: baseline;
   align-items: center;
   flex-direction: row;
+
+  border-radius: 5px;
+}
+
+input {
+  height: 30px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }

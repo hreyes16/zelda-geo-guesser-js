@@ -15,27 +15,25 @@
             <li>About</li>
             <li>How to Play</li>
             <li>Send a message</li>
+            <li>        <button id="startgame">Play Kaka</button>
+</li>
         
         </ul>
     </nav>
 </header>
 <main>
-    <div class="main-container">
-    <section class="gameContainer">
-        <div id="imageContainer">
-            <h2>Where is this location?</h2>
-            
-                <div id="score-container">
-                    <span class="questionIndex">0 / 5</span>         
-                </div>
-                <div class="answer-cont">
-                    <button class="btn">Location 1</button>
-                    <button class="btn">Location 2</button>
-                    <button class="btn">Location 3</button>
-                    <button class="btn">${answer}</button>
-                </div>
-                <button class="btn next" value="next">Next Question -></button>
+    <div id="landing">
+    <div class="main-container" id="game">
+        <h2>Where is this location?</h2>    
+            <div id="imageContainer">
+                <img src="/image_locations/img[0].jpg" id="image" alt="">
+                    <span class="questionIndex">1 / 5</span>    
+                <form action="">
+                    <input type="text" class="btn next" value="Enter Location...." onkeypress="handle(event)">
+                </form>
             </div>`
+         </div>
+        </div>
     </section>
 </main>
    
